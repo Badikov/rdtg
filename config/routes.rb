@@ -1,10 +1,23 @@
 Rdtg::Application.routes.draw do
+  
+
+  #get "registrations/new"
+
+  #get "registrations/edit"
+
+  #get "registrations/create"
+
   namespace :admin do
     root :to => 'base#index'
   end
   
+  #devise_for :users do
 
-  
+    #get 'logout' => 'devise/sessions#destroy'
+  #end
+  devise_for :users, :controllers => { :registrations => "registrations"} do
+    get 'logout' => 'devise/sessions#destroy'
+  end
   root :to => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

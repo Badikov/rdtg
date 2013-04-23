@@ -8,6 +8,17 @@ html
     = csrf_meta_tags
     meta content="width=(device-width,)initial-scale=1.0" name="viewport"
   body
+  	#user_nav
+  	  - if user_signed_in?
+  	    | Signed in as 
+  	    = current_user.email
+  	    |. Not you?  
+  	    = link_to logout_path do 
+  	    	span Sign out
+    p.notice 
+      = notice
+    p.alert 
+      = alert
     = yield
     div id="footer"
       | Copyright © #{Date.current.year} 

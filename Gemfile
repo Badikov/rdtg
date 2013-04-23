@@ -28,6 +28,10 @@ group :development do
 	gem "haml2slim"
 	gem "haml-rails"
 	gem "html2haml"
+
+	gem 'capistrano'
+    gem 'capistrano-deploy', :require => false
+    gem 'rvm-capistrano'
 end
 
 
