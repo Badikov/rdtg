@@ -1,24 +1,25 @@
-doctype html
-html
+doctype 5
+html lang="ru"
   head
-    title= content_for?(:title) ? yield(:title) : "RUSSIA DEVELOPMENT TECHNOLOGY GROUP"
-    = yield(:head)
+    = display_meta_tags :site => 'RUSSIA DEVELOPMENT TECHNOLOGY GROUP'
+    = csrf_meta_tags
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tags
-    meta content="width=(device-width,)initial-scale=1.0" name="viewport"
+    = analytics_init if Rails.env.production?
   body
-  	#user_nav
-  	  - if user_signed_in?
-  	    | Signed in as 
-  	    = current_user.email
-  	    |. Not you?  
-  	    = link_to logout_path do 
-  	    	span Sign out
-    p.notice 
-      = notice
-    p.alert 
-      = alert
-    = yield
-    div id="footer"
-      | Copyright © #{Date.current.year} 
+    .container
+      = image_tag "text3014.png", :alt => 'RUSSIA DEVELOPMENT TECHNOLOGY GROUP'
+      - if user_signed_in?
+          | Signed in as 
+          = current_user.email
+          |. Not you?  
+          = link_to logout_path do 
+            span Sign out
+      = bootstrap_flash
+      .row-fluid
+        = yield
+        #footer
+          | Copyright © #{Date.current.year}   
+          abbr title="RUSSIA DEVELOPMENT TECHNOLOGY GROUP"
+            | RDTG

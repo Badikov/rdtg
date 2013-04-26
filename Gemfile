@@ -15,7 +15,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem "twitter-bootstrap-rails", "~> 2.2.6"
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -28,7 +31,7 @@ group :development do
 	gem "haml2slim"
 	gem "haml-rails"
 	gem "html2haml"
-
+	# Deploy with Capistrano
 	gem 'capistrano'
     gem 'capistrano-deploy', :require => false
     gem 'rvm-capistrano'
@@ -52,6 +55,9 @@ gem 'dynamic_form'
 gem 'rails-i18n'
 
 gem 'devise'
+gem 'meta-tags', :require => 'meta_tags'
+gem 'google-analytics-rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -60,9 +66,6 @@ gem 'devise'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
