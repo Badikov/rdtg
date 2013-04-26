@@ -7,6 +7,7 @@ html lang="ru"
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = analytics_init if Rails.env.production?
+    /! = analytics_init if Rails.env.development?
   body
     .container
       = image_tag "text3014.png", :alt => 'RUSSIA DEVELOPMENT TECHNOLOGY GROUP'
@@ -16,7 +17,7 @@ html lang="ru"
           |. Not you?  
           = link_to logout_path do 
             span Sign out
-      = bootstrap_flash
+      /! = bootstrap_flash
       .row-fluid
         = yield
         #footer
