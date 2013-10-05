@@ -1,0 +1,13 @@
+%h3 Новое сообщение
+%form#new_message
+	.field
+		%label{ :for =>"new_message_name" }="Ваше имя"
+		%input#new_message_name{ :type =>"text", :name =>"name", :class => "forminput" }
+	.field
+		%label{ :for =>"new_message_contact" }="Ваши контаткты: телефон, скайп, емайл ..."
+		%input#new_message_contact{ :type =>"text", :name =>"contact", :class => "forminput" }
+	.field
+		%label{ :for =>"new_message_content" }="Текст сообщения"
+		%textarea#new_message_content{ :name =>"content", :class => "forminput" }
+	.actions
+		%input{ :type =>"submit"}

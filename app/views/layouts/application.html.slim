@@ -7,8 +7,8 @@ html lang="ru"
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = analytics_init if Rails.env.production?
-    /! = analytics_init if Rails.env.development?
   body
+    = javascript_enabled?
     .container
       = image_tag "text3014.png", :alt => 'RUSSIA DEVELOPMENT TECHNOLOGY GROUP'
       - if user_signed_in?
@@ -19,7 +19,8 @@ html lang="ru"
             span Sign out
       = bootstrap_flash
       .row-fluid
-        = yield
+        #container
+          = yield
         #footer
           | Copyright © #{Date.current.year}   
           abbr title="RUSSIA DEVELOPMENT TECHNOLOGY GROUP"

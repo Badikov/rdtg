@@ -1,5 +1,6 @@
 Rdtg::Application.routes.draw do
   
+  
 
   #get "registrations/new"
 
@@ -8,7 +9,13 @@ Rdtg::Application.routes.draw do
   #get "registrations/create"
 
   namespace :admin do
+    scope 'api' do
+      resources :messages, defaults: {format: :json}
+    end
     root :to => 'base#index'
+    #resources :base do
+    #  get 'index'
+    #end
   end
   
   #devise_for :users do

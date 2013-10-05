@@ -1,0 +1,12 @@
+= form_for(Message.new) do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :contact
+    = f.text_field :contact
+  .field
+    = f.label :content
+    = f.text_area :content
+  .actions
+    = f.submit

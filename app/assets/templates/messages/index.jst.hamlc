@@ -1,0 +1,6 @@
+%h1 Messages
+= @messages.length
+%ul
+- for message in @messages.models
+	%li
+		= message.get('name')
